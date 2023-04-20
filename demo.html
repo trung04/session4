@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <ul id="khoaHoc">
+        <li>JavaScript</li>
+        <li>Java Full Stack</li>
+        <li>PHP Full Stack</li>
+    </ul>
+    
+    <button onclick="themKhoaHoc()">Thêm Khóa học</button>
+    <script>
+        function themKhoaHoc() {
+    //Tạo thêm một đối tượng li
+    var node = document.createElement("li");
+    // Tạo một text node
+    var textnode = document.createTextNode("Full Stack DEV");
+    // Thêm text node vào node li vừa tạo
+    node.appendChild(textnode);
+    // Thêm phần tử vừa tạo vào cuối ul
+    document.getElementById("khoaHoc").appendChild(node);
+}
+ 
+
+    </script>
+    
+</body>
+</html>
