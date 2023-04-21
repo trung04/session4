@@ -1,0 +1,108 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <form class="form" action="" onsubmit="return validate()">
+        <h1>Sign up</h1>
+            <div class="form-control">
+                <label for="">
+                    <span>Username</span>
+                    <input type="text" placeholder="Username" name="username" class="username">
+                </label>
+                <p class="error"></p>
+            </div>
+            <div class="form-control">
+                <label for="">
+                    <span>Password</span>
+                    <input type="password" placeholder="Password" name="Password" class="password">
+                </label>
+                <p class="error"></p>
+            </div>
+            <div class="form-control">
+                <label for="">
+                    <span>Email</span>
+                    <input type="text" placeholder="Email" name="Email" class="email">
+                </label>
+                <p class="error"></p>
+            </div>
+            <div class="form-control">
+                <label for="">
+                    <span>Fullname</span>
+                    <input type="text" placeholder="Fullname" name="Fullname" class="fullname">
+                </label>
+                <p class="error"></p>
+            </div>
+            <button>submit</button>
+
+
+    </form>
+    <script>
+        function validate(){
+            const usernameNode=document.querySelector('.username');
+            const usernameText=usernameNode.value;
+            let a=usernameText.length;
+            if((!usernameText) || a<5 || a>10){
+                usernameNode.closest('.form-control').querySelector('.error').innerText="Vui lòng điền username"
+                return false;
+            }
+            const passwordNode = document.querySelector('.password');
+            const passwordText = passwordNode.value;
+        if (!passwordText|| 5>passwordText.length || 10<passwordText.length) {
+            passwordNode.closest('.form-control').querySelector('.error').innerText = 'Vui lòng điền password';
+            return false;
+        }
+        const emailNode = document.querySelector('.email');
+            const emailText = emailNode.value;
+        if (!emailText|| 5>emailText.length || 10<emailText.length) {
+            emailNode.closest('.form-control').querySelector('.error').innerText = 'Vui lòng điền email';
+            return false;
+        }
+        const fullnameNode = document.querySelector('.fullname');
+            const fullnameText = fullnameNode.value;
+        if (!fullnameText|| 5>fullnameText.length || 10<fullnameText.length) {
+         fullnameNode.closest('.form-control').querySelector('.error').innerText = 'Vui lòng điền fullname';
+            return false;
+        }
+        return true
+    }
+        
+
+      
+
+    </script>
+
+<style>
+    .error{
+        color: red;
+        margin-left: 100px;
+    }
+    .form{
+       margin:0px auto; 
+       width: 350px;
+       border: 1px solid #e5e5e5;
+    }
+    .form .form-control{
+        margin-top: 15px;
+    }
+    .form .form-control label span{
+        display: inline-block;
+        width: 100px;
+        text-align: center;
+    }
+    .form button{
+        margin-top: 15px;
+        margin-left: 100px;
+    }
+    h1 {
+        margin-left: 90px;
+    }
+
+</style>
+    
+</body>
+</html>
